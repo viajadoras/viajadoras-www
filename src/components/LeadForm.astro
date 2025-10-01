@@ -14,7 +14,7 @@ const t = {
 <div class="mx-auto max-w-xl rounded-2xl border border-gray-200 p-6 dark:border-gray-800 bg-white/60 dark:bg-white/5 backdrop-blur">
   <h3 class="text-xl font-semibold">{t.title}</h3>
   <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{t.desc}</p>
-  <form id="lead-form" class="mt-6 space-y-4">
+  <form id="lead-form" data-thanks={t.thanks} class="mt-6 space-y-4">
     <input type="text" name="name" placeholder={t.name} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-black" />
     <input type="email" name="email" placeholder={t.email} required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-black" />
     <input type="text" name="phone" placeholder={t.phone} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-black" />
@@ -22,41 +22,5 @@ const t = {
     <button type="submit" class="btn w-full">{t.submit}</button>
     <p id="lead-error" class="hidden text-sm text-error-600">Ops, não foi possível enviar. Tente novamente.</p>
   </form>
-  <script type="module" define:vars={{ thanks: t.thanks }}>
-    import { PUBLIC_API_BASE } from 'astro:env/client';
-    // Fallback seguro para produção se a env não estiver definida no build
-    const apiBase = PUBLIC_API_BASE || 'https://viajadoras-7fb3fd8a76a0.herokuapp.com';
-    const form = document.getElementById('lead-form');
-    const err = document.getElementById('lead-error');
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      err?.classList.add('hidden');
-      const data = Object.fromEntries(new FormData(form));
-      const payload = {
-        name: (data.name || '').toString().trim() || undefined,
-        email: (data.email || '').toString().trim(),
-        phone: (data.phone || '').toString().trim() || undefined,
-      };
-      try {
-        console.log('[lead] submit', { apiBase, payload });
-        const res = await fetch(`${apiBase}/leads`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-        window.plausible && window.plausible('lead_submit');
-        if (res.ok || res.status === 409) {
-          console.log('[lead] ok', res.status);
-          window.location.href = thanks;
-        } else {
-          const txt = await res.text().catch(() => '');
-          console.warn('[lead] error', res.status, txt);
-          err?.classList.remove('hidden');
-        }
-      } catch (e) {
-        console.error('[lead] network_error', e);
-        err?.classList.remove('hidden');
-      }
-    });
-  </script>
+  <script type="module" src="/src/scripts/lead.ts"></script>
 </div>
