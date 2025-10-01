@@ -1,0 +1,28 @@
+---
+const copy = {
+  title: 'Vai segura.',
+  desc: 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança. Entre para a lista de espera.',
+  cta: 'Quero acesso antecipado',
+  see: 'Ver recursos'
+};
+---
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-100 to-transparent dark:from-brand-900/25"></div>
+  <div class="container relative grid items-center gap-10 py-16 sm:grid-cols-2">
+    <div>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">
+        {copy.title}
+      </h1>
+      <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">
+        {copy.desc}
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href={'#lead'} class="btn" onclick={`window.plausible && window.plausible('cta_click', {props: {place: 'hero'}})`}>{copy.cta}</a>
+        <a href={'#recursos'} class="btn-secondary">{copy.see}</a>
+      </div>
+    </div>
+    <div>
+      <img src="/images/hero.jpg" alt="Viajantes se encontrando" class="w-full rounded-2xl border border-gray-200 shadow-sm dark:border-gray-800" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+/* Minimal reset */
+*,*::before,*::after{box-sizing:border-box}
+html,body,h1,h2,h3,h4,p,ul,ol,li,figure,figcaption,blockquote,dl,dd{margin:0;padding:0}
+img,video{max-width:100%;height:auto}
+ul,ol{list-style:none}
+button,input,textarea,select{font:inherit}
+

@@ -1,0 +1,6 @@
+@import url('/fonts.css');
+@import url('/reset.css');
+@import url('/_astro/tailwind.css');
+
+/* Vínculo do Tailwind via Astro; fallback se necessário */
+
