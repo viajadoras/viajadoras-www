@@ -22,8 +22,10 @@ const t = {
     <button type="submit" class="btn w-full">{t.submit}</button>
     <p id="lead-error" class="hidden text-sm text-error-600">Ops, não foi possível enviar. Tente novamente.</p>
   </form>
-  <script define:vars={{ thanks: t.thanks }}>
-    const apiBase = import.meta.env.PUBLIC_API_BASE || 'http://localhost:3000';
+  <script type="module" define:vars={{ thanks: t.thanks }}>
+    import { PUBLIC_API_BASE } from 'astro:env/client';
+    // Fallback seguro para produção se a env não estiver definida no build
+    const apiBase = PUBLIC_API_BASE || 'https://viajadoras-7fb3fd8a76a0.herokuapp.com';
     const form = document.getElementById('lead-form');
     const err = document.getElementById('lead-error');
     form?.addEventListener('submit', async (e) => {
