@@ -27,40 +27,42 @@ import "../styles/global.css";
     <script defer data-domain="viajadoras.app" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
-    <header class="sticky top-0 z-50 border-b border-gray-200/70 dark:border-accent-800 bg-white/80 dark:bg-accent-900/60 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-accent-900/50">
-      <div class="mx-auto max-w-6xl flex items-center justify-between py-1">
-        <a href="/" class="flex items-center gap-2">
-          <!-- Mobile: ícone + texto; Desktop: logo com texto -->
-          <img src="/images/logo-128.png" alt="Viajadoras" class="h-8 w-8 sm:hidden" />
-          <span class="text-base font-semibold sm:hidden">Viajadoras</span>
-          <img src="/logo_com_texto.png" alt="Viajadoras" class="hidden sm:block h-14 w-auto" />
+    <header class="sticky top-0 z-50 border-b border-gray-200/80 dark:border-white/10 bg-white/95 dark:bg-black/70 backdrop-blur shadow-sm supports-[backdrop-filter]:bg-white/90 dark:supports-[backdrop-filter]:bg-black/60">
+      <div class="mx-auto max-w-6xl flex items-center justify-between px-4 py-2">
+        <a href="/" class="flex items-center gap-2 min-w-0">
+          <!-- Mobile brand: compact icon + wordmark -->
+          <img src="/images/logo-128.png" alt="Viajadoras" class="h-7 w-7 flex-shrink-0" />
+          <span class="truncate text-sm font-semibold text-gray-900 dark:text-white">Viajadoras</span>
+          <!-- Desktop: full logo -->
+          <img src="/logo_com_texto.png" alt="Viajadoras" class="hidden sm:block sm:h-12 sm:w-auto ml-2" />
         </a>
         <!-- Desktop nav -->
-        <nav class="hidden gap-6 sm:flex text-base sm:text-lg text-gray-700 dark:text-gray-300">
+        <nav class="hidden gap-6 sm:flex text-base text-gray-700 dark:text-gray-300">
           <a href="/#recursos" class="transition hover:text-accent-400">Recursos</a>
           <a href="/#seguranca" class="transition hover:text-accent-400">Segurança</a>
           <a href="/privacidade" class="transition hover:text-accent-400">Privacidade</a>
         </nav>
         <!-- Mobile: menu button -->
-        <button id="menu-btn" aria-controls="mobile-nav" aria-expanded="false" class="inline-flex items-center justify-center rounded-lg p-2 text-gray-700 hover:text-accent-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400/40 sm:hidden">
+        <button id="menu-btn" aria-label="Abrir menu" aria-controls="mobile-nav" aria-expanded="false" class="sm:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 dark:text-gray-200 hover:text-accent-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400/40">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6"><path d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm.75 4.5a.75.75 0 0 0 0 1.5h16.5a.75.75 0 0 0 0-1.5H3.75Z"/></svg>
         </button>
       </div>
       <!-- Mobile dropdown -->
-      <nav id="mobile-nav" class="sm:hidden hidden border-t border-gray-200/70 dark:border-accent-800">
-        <div class="mx-auto max-w-6xl px-4 py-2 text-base text-gray-800 dark:text-gray-100">
-          <a href="/#recursos" class="block py-2">Recursos</a>
-          <a href="/#seguranca" class="block py-2">Segurança</a>
-          <a href="/privacidade" class="block py-2">Privacidade</a>
-          <a href="/#lead" class="mt-2 inline-flex rounded-xl bg-accent-600 px-4 py-2 text-white hover:bg-accent-500">Quero o beta</a>
+      <nav id="mobile-nav" class="sm:hidden pointer-events-none absolute left-0 right-0 top-full hidden z-40">
+        <div class="pointer-events-auto mx-2 rounded-xl border border-gray-200/80 bg-white/95 p-2 shadow-lg backdrop-blur dark:border-white/10 dark:bg-black/80">
+          <a href="/#recursos" class="block rounded-lg px-3 py-3 text-gray-800 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-white/5">Recursos</a>
+          <a href="/#seguranca" class="block rounded-lg px-3 py-3 text-gray-800 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-white/5">Segurança</a>
+          <a href="/privacidade" class="block rounded-lg px-3 py-3 text-gray-800 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-white/5">Privacidade</a>
+          <a href="/#lead" class="mt-1 block rounded-lg bg-accent-600 px-3 py-3 text-center text-white hover:bg-accent-500">Quero o beta</a>
         </div>
       </nav>
       <script>
         const btn = document.getElementById('menu-btn');
         const nav = document.getElementById('mobile-nav');
         btn?.addEventListener('click', () => {
-          const open = nav?.classList.toggle('hidden') === false;
-          btn.setAttribute('aria-expanded', String(open));
+          const isHidden = nav?.classList.contains('hidden');
+          nav?.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded', String(isHidden));
         });
       </script>
     </header>
