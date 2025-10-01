@@ -24,7 +24,7 @@ const t = {
     <p id="lead-error" class="hidden text-sm text-error-600">Ops, não foi possível enviar. Tente novamente.</p>
   </form>
   <script define:vars={{ thanks: t.thanks, api: API_BASE }}>
-    const apiBase = api;
+    const apiBase = (api || '').replace(/\/+$/, '');
     const form = document.getElementById('lead-form');
     const err = document.getElementById('lead-error');
     form?.addEventListener('submit', async (e) => {
