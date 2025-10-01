@@ -1,4 +1,6 @@
 ---
+import leadUrl from '../scripts/lead.ts?url'
+
 const t = {
   title: 'Entre na lista de espera',
   desc: 'Deixe seu e‑mail para receber novidades e convite do beta.',
@@ -22,5 +24,5 @@ const t = {
     <button type="submit" class="btn w-full">{t.submit}</button>
     <p id="lead-error" class="hidden text-sm text-error-600">Ops, não foi possível enviar. Tente novamente.</p>
   </form>
-  <script type="module" src="/src/scripts/lead.ts"></script>
+  <script type="module" src={leadUrl}></script>
 </div>
