@@ -30,11 +30,11 @@ import "../styles/global.css";
     <header class="sticky top-0 z-50 border-b border-gray-200/80 dark:border-white/10 bg-white/95 dark:bg-black/70 backdrop-blur shadow-sm supports-[backdrop-filter]:bg-white/90 dark:supports-[backdrop-filter]:bg-black/60">
       <div class="mx-auto max-w-6xl flex items-center justify-between px-4 py-3">
         <a href="/" class="flex items-center gap-2 min-w-0 leading-none">
-          <!-- Mobile brand: compact icon + wordmark -->
-          <img src="/images/logo-128.png" alt="Viajadoras" class="h-7 w-7 flex-shrink-0" />
-          <span class="truncate text-base font-semibold text-gray-900 dark:text-white">Viajadoras</span>
-          <!-- Desktop: full logo -->
-          <img src="/logo_com_texto.png" alt="Viajadoras" class="hidden sm:block sm:h-12 sm:w-auto ml-2" />
+          <!-- Mobile brand: só no mobile -->
+          <img src="/images/logo-128.png" alt="Viajadoras" class="h-7 w-7 flex-shrink-0 sm:hidden" />
+          <span class="truncate text-base font-semibold text-gray-900 dark:text-white sm:hidden">Viajadoras</span>
+          <!-- Desktop: logo completa (somente ≥sm) -->
+          <img src="/logo_com_texto.png" alt="Viajadoras" class="hidden sm:block h-12 w-auto" />
         </a>
         <!-- Desktop nav -->
         <nav class="hidden gap-6 sm:flex text-base text-gray-700 dark:text-gray-300">
