@@ -1,5 +1,5 @@
 ---
-import leadUrl from '../scripts/lead.ts?url'
+const API_BASE = import.meta.env.PUBLIC_API_BASE || 'https://viajadoras-7fb3fd8a76a0.herokuapp.com'
 
 const t = {
   title: 'Entre na lista de espera',
@@ -24,5 +24,34 @@ const t = {
     <button type="submit" class="btn w-full">{t.submit}</button>
     <p id="lead-error" class="hidden text-sm text-error-600">Ops, não foi possível enviar. Tente novamente.</p>
   </form>
-  <script type="module" src={leadUrl}></script>
+  <script define:vars={{ thanks: t.thanks, api: API_BASE }}>
+    const apiBase = api;
+    const form = document.getElementById('lead-form');
+    const err = document.getElementById('lead-error');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      err?.classList.add('hidden');
+      const data = Object.fromEntries(new FormData(form));
+      const payload = {
+        name: (data.name || '').toString().trim() || undefined,
+        email: (data.email || '').toString().trim(),
+        phone: (data.phone || '').toString().trim() || undefined,
+      };
+      try {
+        const res = await fetch(`${apiBase}/leads`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        window.plausible && window.plausible('lead_submit');
+        if (res.ok || res.status === 409) {
+          window.location.href = thanks;
+        } else {
+          err?.classList.remove('hidden');
+        }
+      } catch (e) {
+        err?.classList.remove('hidden');
+      }
+    });
+  </script>
 </div>
