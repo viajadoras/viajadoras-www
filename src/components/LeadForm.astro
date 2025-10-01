@@ -16,9 +16,9 @@ const t = {
   <h3 class="text-xl font-semibold">{t.title}</h3>
   <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{t.desc}</p>
   <form id="lead-form" data-thanks={t.thanks} class="mt-6 space-y-4">
-    <input type="text" name="name" placeholder={t.name} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-black" />
-    <input type="email" name="email" placeholder={t.email} required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-black" />
-    <input type="text" name="phone" placeholder={t.phone} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-black" />
+    <input type="text" name="name" placeholder={t.name} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-white/10" />
+    <input type="email" name="email" placeholder={t.email} required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-white/10" />
+    <input type="text" name="phone" placeholder={t.phone} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-white/10" />
     <p class="text-xs text-gray-500 dark:text-gray-400">Ao enviar, você aceita nossa <a href={t.policyUrl} class="underline">Política de Privacidade</a>.</p>
     <button type="submit" class="btn w-full">{t.submit}</button>
     <p id="lead-error" class="hidden text-sm text-error-600">Ops, não foi possível enviar. Tente novamente.</p>

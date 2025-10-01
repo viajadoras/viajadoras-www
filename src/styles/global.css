@@ -7,7 +7,8 @@
 }
 
 html, body { height: 100%; }
-body { @apply bg-white text-gray-900 dark:bg-black dark:text-gray-100 text-[17px]; }
+/* Softer dark theme with lavender tone */
+body { @apply bg-white text-gray-900 dark:bg-accent-900 dark:text-gray-100 text-[17px]; }
 
 .container { @apply mx-auto max-w-6xl px-4; }
 
