@@ -4,7 +4,8 @@ const pageTitle = props.title ?? 'Viajadoras - Vai Segura';
 const pageDescription = props.description ?? 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.';
 const lang = 'pt-BR';
 // Open Graph / Twitter: imagem de compartilhamento
-const ogImage = props.ogImage ?? '/og.png';
+const ogPath = props.ogImage ?? '/og.png';
+const ogImage = (Astro.site ? new URL(ogPath, Astro.site).toString() : ogPath);
 import "../styles/global.css";
 ---
 <!DOCTYPE html>
