@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
 // Domínio público do site
-const SITE = "https://www.viajadoras.com";
+const SITE = "https://viajadoras.com";
 
 export default defineConfig({
   site: SITE,
