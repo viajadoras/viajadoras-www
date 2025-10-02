@@ -2,8 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
-// Ajuste o domínio final quando apontarmos o DNS
-const SITE = "https://viajadoras.app";
+// Domínio público do site
+const SITE = "https://viajadoras.com";
 
 export default defineConfig({
   site: SITE,
