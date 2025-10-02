@@ -11,41 +11,57 @@ const description = 'Companhia e segurança entre mulheres: conexões por viagem
   <Hero />
 
   <Section id="recursos" title="Recursos" subtitle="O que torna a Viajadoras diferente?">
-    <div class="grid gap-6 sm:grid-cols-3">
-      <FeatureCard title="Conexões por viagem" desc="Encontre companheiras por destino, datas e interesses." image="/images/friends1.png" />
-      <FeatureCard title="Check-ins e contatos" desc="Check-in com localização e alerta a contatos de confiança." image="/images/friends2.png" />
-      <FeatureCard title="Verificação" desc="Sinais de confiança e verificação progressiva de perfis." image="/images/friends3.png" />
-    </div>
-  </Section>
-
-  <Section id="seguranca" title="Segurança e privacidade" subtitle="Cuidamos de você e dos seus dados">
-    <div class="mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white/60 p-6 dark:border-gray-800 dark:bg-white/5">
-      <ul class="mt-1 space-y-4 text-lg text-gray-800 dark:text-gray-200">
-        <li class="flex items-start gap-3"><span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-brand-600"></span>Coletamos só o essencial. Não usamos cookies de terceiros.</li>
-        <li class="flex items-start gap-3"><span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-brand-600"></span>Usamos métricas anônimas — não rastreamos você.</li>
-        <li class="flex items-start gap-3"><span class="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-brand-600"></span>Você controla seus dados e pode sair quando quiser.</li>
-      </ul>
-    </div>
-  </Section>
-
-  <Section id="faq" title="Perguntas frequentes">
-    <div class="mx-auto max-w-3xl grid gap-4">
-      <details class="rounded-2xl border border-gray-200 bg-white/70 p-5 dark:border-gray-800 dark:bg-white/5">
-        <summary class="cursor-pointer text-lg sm:text-xl font-medium">Quando o app será lançado?</summary>
-        <p class="mt-2 text-lg text-gray-700 dark:text-gray-300">Estamos finalizando o MVP e abriremos um beta fechado em breve. Entre na lista para receber o convite.</p>
-      </details>
-      <details class="rounded-2xl border border-gray-200 bg-white/70 p-5 dark:border-gray-800 dark:bg-white/5">
-        <summary class="cursor-pointer text-lg sm:text-xl font-medium">O app é pago?</summary>
-        <p class="mt-2 text-lg text-gray-700 dark:text-gray-300">No beta é gratuito. Depois, plano grátis com opções Pro.</p>
-      </details>
-      <details class="rounded-2xl border border-gray-200 bg-white/70 p-5 dark:border-gray-800 dark:bg-white/5">
-        <summary class="cursor-pointer text-lg sm:text-xl font-medium">Como funciona a segurança?</summary>
-        <p class="mt-2 text-lg text-gray-700 dark:text-gray-300">Você define contatos de confiança, faz check-ins com localização e pode enviar pedidos de ajuda. Também oferecemos verificação de perfis.</p>
-      </details>
+    <div class="grid gap-8 sm:grid-cols-3">
+      <FeatureCard
+        title="Segurança"
+        desc="Check-ins, contatos de confiança e pedidos de ajuda."
+        image="/images/friends1.png"
+        features={[
+          'Check-ins com localização',
+          'Contatos de confiança',
+          'Pedido de ajuda (SOS)'
+        ]}
+      />
+      <FeatureCard
+        title="Rede de apoio"
+        desc="Companhia e suporte entre mulheres durante a viagem."
+        image="/images/friends2.png"
+        features={[
+          'Companhia por destino e datas',
+          'Grupos de viagem',
+          'Match por interesses'
+        ]}
+      />
+      <FeatureCard
+        title="Social"
+        desc="Conexões, grupos e eventos para viajar melhor."
+        image="/images/friends3.png"
+        features={[
+          'Eventos e encontros',
+          'Chat e convites',
+          'Perfis e avaliações'
+        ]}
+      />
     </div>
   </Section>
 
   <Section id="lead" title="Acesso antecipado" subtitle="Cadastre-se para receber convite do beta" align="center">
     <LeadForm />
+  </Section>
+
+  <Section id="pesquisa" title="Pesquisa com a comunidade" subtitle="Conte sua experiência e nos ajude a priorizar (3–4 min)">
+    <div class="mx-auto max-w-3xl rounded-2xl border border-gray-800 bg-black p-6 text-white">
+      <h3 class="text-lg font-semibold">Viajadoras ✈️ — conte sua experiência (3–4 min)</h3>
+      <p class="mt-3 text-sm text-gray-300">
+        Queremos construir a Viajadoras com você. Suas experiências, receios e ideias guiam nossas prioridades.
+        As respostas são anônimas; compartilhe só o que se sentir confortável. No fim, você pode deixar contato para participar do beta (opcional).
+        Se tocar em temas sensíveis, sinta-se à vontade para ser breve.
+      </p>
+      <div class="mt-5">
+        <a href="https://forms.gle/roQHvyCf5VGgiL3A9" target="_blank" rel="noopener noreferrer" class="underline decoration-brand-300/60 underline-offset-4 text-base font-medium">
+          Responder pesquisa (abre em nova aba)
+        </a>
+      </div>
+    </div>
   </Section>
 </Base>
