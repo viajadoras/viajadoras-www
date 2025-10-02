@@ -9,5 +9,10 @@ import Base from "../layouts/Base.astro";
       <a href="/" class="btn">Voltar à página inicial</a>
     </div>
   </section>
+  <script define:vars={{ sendTo: import.meta.env.PUBLIC_GOOGLE_ADS_SEND_TO }}>
+    if (typeof window !== 'undefined' && window.gtag && sendTo) {
+      // Conversão Google Ads (page-load em /obrigada)
+      window.gtag('event', 'conversion', { send_to: sendTo });
+    }
+  </script>
 </Base>
-

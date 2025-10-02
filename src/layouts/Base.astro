@@ -52,6 +52,20 @@ import "../styles/global.css";
     <meta name="twitter:site" content="@viajadorasbr" />
     <meta name="twitter:url" content={canonicalUrl} />
     
+    <!-- Google Ads (gtag.js) -->
+    {(() => {
+      const adsId = (import.meta.env.PUBLIC_GOOGLE_ADS_ID || 'AW-17592059630') as string;
+      return (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`}></script>
+          <script>
+            {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${adsId}');`}
+          </script>
+        </>
+      );
+    })()}
+
+    <!-- Plausible Analytics -->
     <script defer data-domain="viajadoras.com" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
