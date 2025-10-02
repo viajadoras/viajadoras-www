@@ -17,10 +17,13 @@ import "../styles/global.css";
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="icon" href="/logo.png" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Viajadoras" />
+    <meta property="og:locale" content="pt_BR" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:secure_url" content={ogImage} />
     <meta property="og:image:type" content="image/jpeg" />
@@ -32,7 +35,7 @@ import "../styles/global.css";
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:url" content={canonicalUrl} />
     
-    <script defer data-domain="viajadoras.app" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="viajadoras.com" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <header class="sticky top-0 z-50 border-b border-gray-200/80 dark:border-white/10 bg-white/95 dark:bg-black/70 backdrop-blur shadow-sm supports-[backdrop-filter]:bg-white/90 dark:supports-[backdrop-filter]:bg-black/60">
