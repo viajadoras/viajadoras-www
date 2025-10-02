@@ -3,8 +3,8 @@ const props = Astro.props as Record<string, string>;
 const pageTitle = props.title ?? 'Viajadoras - Vai Segura';
 const pageDescription = props.description ?? 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.';
 const lang = 'pt-BR';
-// Open Graph / Twitter: usar logo sem texto (ícone)
-const ogImage = props.ogImage ?? '/logo.png';
+// Open Graph / Twitter: imagem de compartilhamento
+const ogImage = props.ogImage ?? '/og.png';
 import "../styles/global.css";
 ---
 <!DOCTYPE html>
