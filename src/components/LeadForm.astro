@@ -1,5 +1,5 @@
 ---
-const API_BASE = import.meta.env.PUBLIC_API_BASE || 'https://viajadoras-7fb3fd8a76a0.herokuapp.com'
+const API_BASE = import.meta.env.PUBLIC_API_BASE
 
 const t = {
   title: 'Entre na lista de espera',
@@ -7,6 +7,8 @@ const t = {
   name: 'Seu nome (opcional)',
   email: 'Seu e‑mail',
   phone: 'Telefone (opcional, com DDD)',
+  consent: 'Li e concordo com a',
+  privacyLink: 'Política de Privacidade',
   submit: 'Quero participar',
   thanks: '/obrigada'
 };
@@ -18,6 +20,10 @@ const t = {
     <input type="text" name="name" placeholder={t.name} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-white/10" />
     <input type="email" name="email" placeholder={t.email} required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-white/10" />
     <input type="text" name="phone" placeholder={t.phone} class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base dark:border-gray-700 dark:bg-white/10" />
+    <label class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+      <input type="checkbox" name="consent" required class="mt-0.5 rounded border-gray-300 dark:border-gray-700" />
+      <span>{t.consent} <a href="/privacidade" target="_blank" class="underline decoration-brand-400/60 underline-offset-2 hover:text-gray-900 dark:hover:text-gray-100">{t.privacyLink}</a></span>
+    </label>
     <button type="submit" class="btn w-full">{t.submit}</button>
     <p id="lead-error" class="hidden text-sm text-error-600">Ops, não foi possível enviar. Tente novamente.</p>
   </form>
