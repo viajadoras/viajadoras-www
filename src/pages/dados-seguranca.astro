@@ -1,0 +1,294 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Gestão de Dados e Segurança" description="Como gerenciamos seus dados e garantimos sua segurança na Viajadoras" lang="pt-BR">
+  <section class="container prose prose-slate py-12 dark:prose-invert max-w-4xl">
+    <h1>Gestão de Dados e Segurança</h1>
+    <p class="text-sm text-gray-600 dark:text-gray-400">Última atualização: 24 de outubro de 2025</p>
+
+    <p class="lead">Na Viajadoras, sua segurança e privacidade são prioridades absolutas. Esta página explica como implementamos proteção de dados e segurança no aplicativo.</p>
+
+    <h2>Coleta e Proteção de Dados</h2>
+
+    <h3>Dados que coletamos</h3>
+    <p>Coletamos apenas os dados necessários para o funcionamento do aplicativo:</p>
+
+    <div class="not-prose bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-4">
+      <h4 class="text-base font-semibold text-blue-900 dark:text-blue-100 mt-0 mb-2">✅ Dados Obrigatórios</h4>
+      <ul class="mb-0 text-sm text-blue-900 dark:text-blue-100">
+        <li><strong>Autenticação:</strong> Número de telefone (para login via SMS)</li>
+        <li><strong>Identidade:</strong> Nome completo e nome preferido</li>
+        <li><strong>Verificação:</strong> Selfie para validação (não exibida publicamente)</li>
+      </ul>
+    </div>
+
+    <div class="not-prose bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 my-4">
+      <h4 class="text-base font-semibold text-green-900 dark:text-green-100 mt-0 mb-2">⚠️ Dados Sensíveis (com consentimento explícito)</h4>
+      <ul class="mb-0 text-sm text-green-900 dark:text-green-100">
+        <li><strong>Localização GPS:</strong> Coletada <strong>apenas</strong> durante check-ins de segurança ou pedidos de ajuda (SOS)</li>
+        <li>Você controla quando compartilhar sua localização</li>
+        <li>Pode revogar permissão a qualquer momento</li>
+      </ul>
+    </div>
+
+    <h3>Como protegemos seus dados</h3>
+
+    <p>Implementamos medidas rigorosas de segurança:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Camada de Segurança</th>
+          <th>Implementação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Criptografia em trânsito</strong></td>
+          <td>Todas as comunicações via HTTPS (TLS/SSL)</td>
+        </tr>
+        <tr>
+          <td><strong>Armazenamento seguro</strong></td>
+          <td>Tokens JWT em Keychain (iOS) e Keystore (Android)</td>
+        </tr>
+        <tr>
+          <td><strong>Autenticação</strong></td>
+          <td>OTP via SMS + tokens JWT com expiração</td>
+        </tr>
+        <tr>
+          <td><strong>Verificação de identidade</strong></td>
+          <td>Selfie + aprovação manual de novas contas</td>
+        </tr>
+        <tr>
+          <td><strong>Acesso restrito</strong></td>
+          <td>Apenas equipe autorizada pode acessar dados sensíveis</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Gestão de Conta e Dados</h2>
+
+    <h3>Criação de conta</h3>
+    <p>O aplicativo Viajadoras utiliza autenticação moderna e segura:</p>
+
+    <div class="not-prose">
+      <ol class="space-y-3 text-sm">
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold">1</span>
+          <div>
+            <strong>Cadastro via telefone:</strong> Você informa seu número de telefone
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold">2</span>
+          <div>
+            <strong>Verificação por SMS:</strong> Recebe um código único (OTP) via SMS
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold">3</span>
+          <div>
+            <strong>Confirmação de identidade:</strong> Preenche nome completo e nome preferido
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold">4</span>
+          <div>
+            <strong>Selfie de verificação:</strong> Tira uma selfie para validação (não aparece no perfil público)
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold">5</span>
+          <div>
+            <strong>Aprovação manual:</strong> Nossa equipe revisa e aprova novas contas (geralmente em até 24h)
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <p class="mt-4"><strong>Método de autenticação:</strong> Nome de usuário (telefone) + OTP (One-Time Password via SMS)</p>
+
+    <h3>Exclusão de conta e dados</h3>
+
+    <p>Você tem <strong>controle total</strong> sobre seus dados. Pode solicitar exclusão a qualquer momento:</p>
+
+    <div class="not-prose bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 my-4">
+      <h4 class="text-lg font-semibold text-red-900 dark:text-red-100 mt-0 mb-3">Como excluir sua conta</h4>
+
+      <div class="mb-4">
+        <p class="text-sm font-semibold text-red-900 dark:text-red-100 mb-2">✅ Opção 1: Pelo aplicativo (recomendado)</p>
+        <ol class="text-sm text-red-900 dark:text-red-100 space-y-1 ml-4">
+          <li>1. Abra o app Viajadoras</li>
+          <li>2. Vá em <strong>Configurações</strong> (ícone de engrenagem)</li>
+          <li>3. Role até a seção <strong>Conta</strong></li>
+          <li>4. Toque em <strong>Excluir conta</strong></li>
+          <li>5. Confirme a exclusão</li>
+        </ol>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-red-900 dark:text-red-100 mb-2">✉️ Opção 2: Por e-mail</p>
+        <p class="text-sm text-red-900 dark:text-red-100">
+          Envie solicitação para <a href="mailto:privacidade@viajadoras.com" class="underline font-medium">privacidade@viajadoras.com</a> com:
+        </p>
+        <ul class="text-sm text-red-900 dark:text-red-100 mt-2 ml-4 space-y-1">
+          <li>• Seu número de telefone cadastrado</li>
+          <li>• Assunto: "Exclusão de Conta"</li>
+          <li>• Responderemos em até 15 dias corridos</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>O que acontece quando você exclui a conta</h4>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo de Dado</th>
+          <th>Tratamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Perfil e fotos</td>
+          <td>Excluídos permanentemente em até 30 dias</td>
+        </tr>
+        <tr>
+          <td>Mensagens</td>
+          <td>Removidas das suas conversas imediatamente</td>
+        </tr>
+        <tr>
+          <td>Viagens e check-ins</td>
+          <td>Excluídos permanentemente</td>
+        </tr>
+        <tr>
+          <td>Localização GPS</td>
+          <td>Todos os registros excluídos</td>
+        </tr>
+        <tr>
+          <td>Dados de verificação (selfie)</td>
+          <td>Excluídos após 30 dias</td>
+        </tr>
+        <tr>
+          <td>Denúncias/investigações</td>
+          <td>Mantidos por até 5 anos (obrigação legal)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Exclusão parcial de dados</h3>
+
+    <p>Você também pode excluir dados específicos sem deletar a conta:</p>
+
+    <ul>
+      <li><strong>Mensagens:</strong> Exclua conversas específicas no próprio chat</li>
+      <li><strong>Viagens:</strong> Cancele ou exclua viagens planejadas a qualquer momento</li>
+      <li><strong>Fotos de perfil:</strong> Altere ou remova pelo app</li>
+      <li><strong>Contatos de confiança:</strong> Gerencie pela seção de Segurança</li>
+    </ul>
+
+    <p>Para outros tipos de exclusão parcial, entre em contato: <a href="mailto:privacidade@viajadoras.com">privacidade@viajadoras.com</a></p>
+
+    <h2>Seus Direitos (LGPD)</h2>
+
+    <p>Conforme a Lei Geral de Proteção de Dados, você tem direito a:</p>
+
+    <div class="not-prose grid gap-4 sm:grid-cols-2 my-6">
+      <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">✅ Acesso aos dados</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-0">Confirmar quais dados tratamos e acessá-los</p>
+      </div>
+
+      <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">📝 Correção</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-0">Corrigir dados incompletos ou incorretos</p>
+      </div>
+
+      <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">🗑️ Exclusão</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-0">Solicitar exclusão de dados desnecessários</p>
+      </div>
+
+      <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">📦 Portabilidade</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-0">Receber seus dados em formato estruturado</p>
+      </div>
+
+      <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">🔍 Transparência</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-0">Saber com quem compartilhamos seus dados</p>
+      </div>
+
+      <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">🚫 Revogação</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-0">Revogar consentimento a qualquer momento</p>
+      </div>
+    </div>
+
+    <h2>Conformidade Google Play</h2>
+
+    <p>Para listagem na Google Play Store, declaramos:</p>
+
+    <div class="not-prose bg-gray-50 dark:bg-gray-800 rounded-lg p-6 my-4 text-sm">
+      <dl class="space-y-3">
+        <div>
+          <dt class="font-semibold text-gray-900 dark:text-gray-100">Coleta de dados obrigatórios?</dt>
+          <dd class="text-gray-600 dark:text-gray-400">✅ Sim (telefone, nome, verificação de identidade)</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-gray-900 dark:text-gray-100">Dados criptografados em trânsito?</dt>
+          <dd class="text-gray-600 dark:text-gray-400">✅ Sim (HTTPS/TLS)</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-gray-900 dark:text-gray-100">Método de criação de conta:</dt>
+          <dd class="text-gray-600 dark:text-gray-400">Nome de usuário (telefone) + autenticação (OTP via SMS)</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-gray-900 dark:text-gray-100">URL para exclusão de conta:</dt>
+          <dd class="text-gray-600 dark:text-gray-400">
+            <a href="https://viajadoras.com/dados-seguranca" class="underline">https://viajadoras.com/dados-seguranca</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-gray-900 dark:text-gray-100">Exclusão parcial de dados:</dt>
+          <dd class="text-gray-600 dark:text-gray-400">✅ Sim (mensagens, viagens, fotos podem ser excluídas individualmente)</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-gray-900 dark:text-gray-100">Política de privacidade:</dt>
+          <dd class="text-gray-600 dark:text-gray-400">
+            <a href="https://viajadoras.com/privacidade" class="underline">https://viajadoras.com/privacidade</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <h2>Contato</h2>
+
+    <p>Para exercer seus direitos ou esclarecer dúvidas sobre privacidade:</p>
+
+    <div class="not-prose bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-lg p-6 my-4">
+      <ul class="space-y-2 mb-0 text-sm">
+        <li>
+          <strong class="text-brand-900 dark:text-brand-100">E-mail:</strong>
+          <a href="mailto:privacidade@viajadoras.com" class="text-brand-600 dark:text-brand-400 underline">privacidade@viajadoras.com</a>
+        </li>
+        <li>
+          <strong class="text-brand-900 dark:text-brand-100">Prazo de resposta:</strong>
+          <span class="text-gray-700 dark:text-gray-300">Até 15 dias corridos</span>
+        </li>
+        <li>
+          <strong class="text-brand-900 dark:text-brand-100">Endereço:</strong>
+          <span class="text-gray-700 dark:text-gray-300">Av. Portugal, 1148 — Setor Marista — Goiânia - GO — CEP 74150-030</span>
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      <strong>GT TECNOLOGIA E SERVICOS LTDA</strong><br>
+      CNPJ 46.112.388/0001-13<br>
+      Última atualização: 24 de outubro de 2025
+    </p>
+  </section>
+</Base>
