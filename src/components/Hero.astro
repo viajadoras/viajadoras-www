@@ -33,7 +33,16 @@ const copy = {
         <img src="/images/feature1.jpg" alt="Conexões por viagem" class="w-full rounded-2xl border border-white/20 shadow-sm" />
       </div>
       <div class="mt-8 flex items-center gap-5">
-        <a href={'#lead'} class="btn" onclick={`window.plausible && window.plausible('cta_click', {props: {place: 'hero'}})`}>{copy.cta}</a>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.viajadoras.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Baixar na Google Play"
+          onclick={`window.plausible && window.plausible('google_play_click', {props: {place: 'hero'}})`}
+          class="inline-block transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300/50 rounded-lg"
+        >
+          <img src="/images/google-play-badge.png" alt="Disponível no Google Play" class="h-14 w-auto" />
+        </a>
         <a href="https://instagram.com/viajadorasbr" target="_blank" rel="noopener noreferrer" aria-label="Instagram @viajadorasbr" class="inline-flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300/50">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-12 w-12" aria-hidden="true">
             <g fill="none">
