@@ -8,7 +8,19 @@ const { title, desc, image, features = [], imageAlt } = Astro.props as {
 };
 ---
 <article class="rounded-2xl border border-gray-800 bg-black text-white overflow-hidden shadow-sm min-h-[360px]">
-  {image && <img src={image} alt={imageAlt || title} class="h-48 w-full object-cover" loading="lazy" />}
+  {image && (
+    <img
+      srcset={`${image.replace(/\.[^.]+$/, '')}-400.webp 400w, ${image.replace(/\.[^.]+$/, '')}-662.webp 662w, ${image.replace(/\.[^.]+$/, '')}-1024.webp 1024w`}
+      sizes="(max-width: 640px) 400px, (max-width: 1024px) 662px, 1024px"
+      src={`${image.replace(/\.[^.]+$/, '')}-1024.webp`}
+      alt={imageAlt || title}
+      width="1024"
+      height="1024"
+      class="h-48 w-full object-cover"
+      loading="lazy"
+      style="aspect-ratio: 1/1"
+    />
+  )}
   <div class="p-7">
     <h3 class="text-lg font-semibold text-white">{title}</h3>
     {desc && <p class="mt-2 text-sm text-gray-300">{desc}</p>}
@@ -23,4 +35,4 @@ const { title, desc, image, features = [], imageAlt } = Astro.props as {
       </ul>
     )}
   </div>
-</div>
+</article>

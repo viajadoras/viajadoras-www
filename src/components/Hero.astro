@@ -24,7 +24,18 @@ const copy = {
       </p>
       <!-- Mobile image above CTAs -->
       <div class="mt-6 sm:hidden">
-        <img src="/images/feature1.jpg" alt="Mulheres viajantes conectadas por aplicativo de segurança e companhia" class="w-full rounded-2xl border border-white/20 shadow-sm" loading="eager" fetchpriority="high" />
+        <img
+          srcset="/images/feature1-400.webp 400w, /images/feature1-800.webp 800w"
+          sizes="(max-width: 640px) 100vw, 400px"
+          src="/images/feature1-800.webp"
+          alt="Mulheres viajantes conectadas por aplicativo de segurança e companhia"
+          width="800"
+          height="800"
+          class="w-full rounded-2xl border border-white/20 shadow-sm"
+          loading="eager"
+          fetchpriority="high"
+          style="aspect-ratio: 1/1"
+        />
       </div>
       <div class="mt-8 flex items-center gap-5">
         <a
@@ -35,7 +46,13 @@ const copy = {
           onclick={`window.plausible && window.plausible('google_play_click', {props: {place: 'hero'}})`}
           class="inline-block transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300/50 rounded-lg"
         >
-          <img src="/images/google-play-badge.png" alt="Disponível no Google Play" class="h-14 w-auto" />
+          <img
+            src="/images/google-play-badge.webp"
+            alt="Disponível no Google Play"
+            width="253"
+            height="98"
+            class="h-14 w-auto"
+          />
         </a>
         <a href="https://instagram.com/viajadorasbr" target="_blank" rel="noopener noreferrer" aria-label="Instagram @viajadorasbr" class="inline-flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300/50">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-12 w-12" aria-hidden="true">
@@ -63,7 +80,18 @@ const copy = {
       </div>
     </div>
     <div class="hidden sm:block">
-      <img src="/images/feature1.jpg" alt="Mulheres viajantes conectadas por aplicativo de segurança e companhia" class="w-full rounded-2xl border border-white/20 shadow-sm" loading="eager" fetchpriority="high" />
+      <img
+        srcset="/images/feature1-800.webp 800w, /images/feature1-1024.webp 1024w"
+        sizes="(max-width: 1024px) 800px, 1024px"
+        src="/images/feature1-1024.webp"
+        alt="Mulheres viajantes conectadas por aplicativo de segurança e companhia"
+        width="1024"
+        height="1024"
+        class="w-full rounded-2xl border border-white/20 shadow-sm"
+        loading="eager"
+        fetchpriority="high"
+        style="aspect-ratio: 1/1"
+      />
     </div>
   </div>
 </section>

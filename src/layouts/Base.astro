@@ -73,9 +73,12 @@ import "../styles/global.css";
     <meta name="twitter:url" content={canonicalUrl} />
     
     <!-- Google tag (gtag.js) - Google Ads -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17592059630"></script>
-    <script>
-      {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17592059630');`}
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=AW-17592059630"></script>
+    <script defer>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17592059630');
     </script>
 
     <!-- Plausible Analytics -->
@@ -94,10 +97,10 @@ import "../styles/global.css";
       <div class="mx-auto max-w-6xl flex items-center justify-between px-4 py-3">
         <a href="/" class="flex items-center gap-2 min-w-0 leading-none">
           <!-- Mobile brand: só no mobile -->
-          <img src="/images/logo-128.png" alt="Viajadoras" class="h-7 w-7 flex-shrink-0 sm:hidden" />
+          <img src="/images/logo-128.webp" alt="Viajadoras" width="128" height="128" class="h-7 w-7 flex-shrink-0 sm:hidden" />
           <span class="truncate text-base font-semibold text-gray-900 dark:text-white sm:hidden">Viajadoras</span>
           <!-- Desktop: logo completa (somente ≥sm) -->
-          <img src="/logo_com_texto.png" alt="Viajadoras" class="hidden sm:block h-12 w-auto" />
+          <img src="/logo_com_texto.webp" alt="Viajadoras" width="879" height="336" class="hidden sm:block h-12 w-auto" />
         </a>
         <!-- Mobile: Instagram icon on the right -->
         <a href="https://instagram.com/viajadorasbr" target="_blank" rel="noopener noreferrer" aria-label="Instagram @viajadorasbr" class="sm:hidden">
@@ -159,7 +162,7 @@ import "../styles/global.css";
         <div class="grid gap-8 md:grid-cols-2">
           <div class="space-y-3">
             <a href="/" class="inline-flex items-center gap-2">
-              <img src="/images/logo-128.png" alt="Viajadoras" class="h-7 w-7" />
+              <img src="/images/logo-128.webp" alt="Viajadoras" width="128" height="128" class="h-7 w-7" />
               <span class="text-base font-semibold text-gray-900 dark:text-white">Viajadoras</span>
             </a>
             <p class="text-gray-600 dark:text-gray-400">© {new Date().getFullYear()} Viajadoras</p>

@@ -6,6 +6,19 @@
   color-scheme: light dark;
 }
 
+/* CLS Prevention */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure smooth font loading */
+@layer base {
+  html {
+    font-display: swap;
+  }
+}
+
 html,
 body {
   height: 100%;
