@@ -1,9 +1,12 @@
 ---
+import StructuredData from "../components/StructuredData.astro";
+
 const props = Astro.props as Record<string, string>;
 const pageTitle = props.title ?? 'Viajadoras - Vai Segura';
 const pageDescription = props.description ?? 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.';
 const lang = 'pt-BR';
-// Open Graph / Twitter: imagem de compartilhamento
+const isHomepage = Astro.url.pathname === '/';
+
 const OG_VERSION = '20251002';
 const ogPath = props.ogImage ?? `/og.jpg?v=${OG_VERSION}`;
 const ogImage = (Astro.site ? new URL(ogPath, Astro.site).toString() : ogPath);
@@ -13,6 +16,7 @@ const twitterImagePath = `/twitter_1200x600.jpg?v=${OG_VERSION}`;
 const twitterImage = (Astro.site ? new URL(twitterImagePath, Astro.site).toString() : twitterImagePath);
 const ogAlt = 'Grupo de mulheres viajando e sorrindo na praia — Viajadoras';
 const canonicalUrl = Astro.url ? Astro.url.toString() : (Astro.site ? Astro.site.toString() : '');
+
 import "../styles/global.css";
 ---
 <!DOCTYPE html>
@@ -20,9 +24,25 @@ import "../styles/global.css";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary Meta Tags -->
     <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
     <meta name="description" content={pageDescription} />
-    <link rel="icon" href="/logo.png" />
+    <meta name="keywords" content="viajadoras, mulheres viajantes, segurança feminina, viagem mulheres, rede apoio viagem, check-in viagem, contatos confiança, companhia viagem" />
+    <meta name="author" content="Viajadoras" />
+    <meta name="theme-color" content="#ec4899" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Preconnect to external domains for better performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://plausible.io" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="manifest" href="/manifest.json" />
+
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
@@ -60,6 +80,14 @@ import "../styles/global.css";
 
     <!-- Plausible Analytics -->
     <script defer data-domain="viajadoras.com" src="https://plausible.io/js/script.js"></script>
+
+    <!-- Structured Data (Schema.org) -->
+    <StructuredData
+      type={isHomepage ? 'homepage' : 'page'}
+      title={pageTitle}
+      description={pageDescription}
+      url={canonicalUrl}
+    />
   </head>
   <body>
     <header class="sticky top-0 z-50 border-b border-gray-200/80 dark:border-white/10 bg-white/95 dark:bg-black/70 backdrop-blur shadow-sm supports-[backdrop-filter]:bg-white/90 dark:supports-[backdrop-filter]:bg-black/60">

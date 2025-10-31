@@ -1,0 +1,107 @@
+---
+interface Props {
+  type?: 'homepage' | 'page';
+  title?: string;
+  description?: string;
+  url?: string;
+}
+
+const { type = 'page', title, description, url } = Astro.props;
+const siteUrl = Astro.site?.toString() || 'https://viajadoras.com';
+const currentUrl = url || Astro.url.toString();
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: 'Viajadoras',
+  legalName: 'GT TECNOLOGIA E SERVICOS LTDA',
+  url: siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/logo.png`,
+    width: 512,
+    height: 512
+  },
+  image: `${siteUrl}/og_1200x630.jpg`,
+  description: 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Av. Portugal, 1148',
+    addressLocality: 'Goiânia',
+    addressRegion: 'GO',
+    postalCode: '74150-030',
+    addressCountry: 'BR'
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    availableLanguage: ['pt-BR']
+  },
+  sameAs: [
+    'https://instagram.com/viajadorasbr'
+  ],
+  founder: {
+    '@type': 'Organization',
+    name: 'GT TECNOLOGIA E SERVICOS LTDA'
+  }
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: 'Viajadoras',
+  description: 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.',
+  publisher: {
+    '@id': `${siteUrl}/#organization`
+  },
+  inLanguage: 'pt-BR'
+};
+
+const mobileAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: 'Viajadoras',
+  operatingSystem: 'ANDROID',
+  applicationCategory: 'TravelApplication',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'BRL'
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    ratingCount: '1'
+  },
+  description: 'Companhia e segurança entre mulheres viajantes. Check-ins, contatos de confiança e rede de apoio.',
+  image: `${siteUrl}/logo.png`,
+  screenshot: `${siteUrl}/og_1200x630.jpg`
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': currentUrl,
+  url: currentUrl,
+  name: title || 'Viajadoras - Vai segura',
+  description: description || 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.',
+  isPartOf: {
+    '@id': `${siteUrl}/#website`
+  },
+  about: {
+    '@id': `${siteUrl}/#organization`
+  },
+  inLanguage: 'pt-BR'
+};
+
+const schemas = type === 'homepage'
+  ? [organizationSchema, websiteSchema, mobileAppSchema, webPageSchema]
+  : [webPageSchema];
+---
+
+{schemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}
