@@ -3,8 +3,11 @@ import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import FeatureCard from "../components/FeatureCard.astro";
-const title = 'Viajadoras - Vai segura';
-const description = 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.';
+import ForWhom from "../components/ForWhom.astro";
+import Destinations from "../components/Destinations.astro";
+import FAQ from "../components/FAQ.astro";
+const title = 'Viajadoras - App de Viagens para Mulheres: Segurança, Companhia e Rede de Apoio';
+const description = 'O app para todas as mulheres que viajam - sozinhas, acompanhadas, a trabalho ou lazer. Encontre companhia, socialize, tenha segurança com check-ins e contatos de confiança. Rede de apoio feminina em viagens pelo Brasil e mundo.';
 ---
 <Base {title} {description} lang="pt-BR">
   <Hero />
@@ -46,4 +49,10 @@ const description = 'Companhia e segurança entre mulheres: conexões por viagem
       />
     </div>
   </Section>
+
+  <ForWhom />
+
+  <Destinations />
+
+  <FAQ />
 </Base>

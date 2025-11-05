@@ -1,0 +1,93 @@
+---
+// Schema.org FAQPage for rich snippets
+const siteUrl = Astro.site?.toString() || 'https://viajadoras.com';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Como funciona o app Viajadoras para mulheres viajantes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O Viajadoras é um aplicativo que conecta mulheres que gostam de viajar, oferecendo recursos de segurança como check-ins com localização, contatos de confiança e pedidos de ajuda (SOS). Você pode encontrar companhia para suas viagens, formar grupos com base em destinos e datas, e fazer parte de uma rede de apoio de mulheres viajantes.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'O app é só para mulheres viajando sozinhas?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Não! O Viajadoras é para TODAS as mulheres que viajam - sozinhas, acompanhadas, a trabalho ou lazer. Se você já tem companhia mas quer socializar no destino, viaja a negócios e busca networking, ou apenas quer ter segurança e rede de apoio, o app é para você!'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Como encontrar hospedagem segura para mulheres?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Na comunidade Viajadoras, você encontra recomendações de hotéis, pousadas e hostels avaliados por outras mulheres viajantes. Além disso, temos parceria com a ABIH que oferece até 15% de desconto em hospedagens para membros da comunidade. Você também pode encontrar companhia para dividir quarto e economizar.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'É seguro viajar sozinha sendo mulher?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Viajar sozinha pode ser seguro quando você toma as precauções certas. O Viajadoras foi criado justamente para aumentar a segurança de mulheres viajantes através de check-ins regulares, contatos de confiança que podem acompanhar sua localização, e uma rede de apoio de outras mulheres viajantes que podem ajudar caso você precise.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Como posso encontrar outras mulheres para viajar junto?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No app Viajadoras, você pode buscar por destino e datas de viagem para encontrar outras mulheres com planos similares. O sistema faz match por interesses, estilo de viagem e perfil. Você pode participar de grupos de viagem, conversar via chat e organizar encontros antes de partir.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Consigo usar para viagens a trabalho?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim! Muitas mulheres usam o Viajadoras para viagens corporativas e a negócios. Você pode ter segurança através dos check-ins, fazer networking com outras profissionais no destino, e aproveitar o tempo livre conhecendo a cidade com outras viajadoras.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Quais são os destinos mais populares para mulheres viajantes no Brasil?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Os destinos mais buscados são São Paulo e Rio de Janeiro (que representam mais de 64% das viagens), seguidos por cidades do Nordeste como Salvador, Recife, Fortaleza, Porto Seguro e Maceió. Na comunidade, você encontra dicas e experiências reais sobre cada destino.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Como funciona para encontrar hostel para mulheres?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No app você pode buscar recomendações de hostels com dormitórios femininos, ambiente acolhedor e seguro. Também pode encontrar outras mochileiras para dividir quarto, compartilhar custos e fazer companhia durante a viagem.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Posso usar apenas para ter rede de apoio, sem buscar companhia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Com certeza! Muitas mulheres usam o Viajadoras apenas para ter a segurança dos check-ins, manter contatos de confiança informados e ter acesso ao suporte da comunidade caso precisem. Você escolhe como quer usar o app.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Posso usar o app para viagens nacionais e internacionais?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim! O Viajadoras funciona para qualquer tipo de viagem - seja nacional ou internacional, viagens curtas de fim de semana ou mochilões longos. Onde quer que você vá, pode encontrar companhia, compartilhar sua localização com contatos de confiança e ter o apoio da comunidade.'
+      }
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
