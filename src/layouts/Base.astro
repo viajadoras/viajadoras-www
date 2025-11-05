@@ -1,5 +1,6 @@
 ---
 import StructuredData from "../components/StructuredData.astro";
+import FAQSchema from "../components/FAQSchema.astro";
 
 const props = Astro.props as Record<string, string>;
 const pageTitle = props.title ?? 'Viajadoras - Vai Segura';
@@ -29,7 +30,7 @@ import "../styles/global.css";
     <title>{pageTitle}</title>
     <meta name="title" content={pageTitle} />
     <meta name="description" content={pageDescription} />
-    <meta name="keywords" content="viajadoras, mulheres viajantes, segurança feminina, viagem mulheres, rede apoio viagem, check-in viagem, contatos confiança, companhia viagem" />
+    <meta name="keywords" content="viagens para mulheres, mulheres viajando sozinhas, mulheres viajantes, passagens para mulheres, hotéis para mulheres, hospedagem feminina, hostels mulheres, pousadas seguras mulheres, destinos para mulheres, onde se hospedar mulher sozinha, viagem solo feminina, segurança feminina viagem, app para mulheres viajantes, grupo de mulheres viajantes, rede de mulheres viajantes, viajadoras brasil, comunidade mulheres viajantes, viagem segura mulheres, companhia de viagem feminina, aplicativo viagem mulheres, mochileiras brasil, mulheres que viajam sozinhas, turismo feminino, viagem em grupo mulheres, amigas de viagem, conectar mulheres viajantes, socialização viagem mulheres, mulheres viajando acompanhadas, viagem trabalho mulheres, viagem negócios feminina, rede apoio viajantes, check-in viagem, contatos confiança, SOS viagem mulheres, segurança viagem feminina, encontrar companhia viagem, mulheres viajando juntas, viajar com segurança, hospedagem confiável mulheres, hotel seguro mulher, desconto hospedagem mulheres, viagem barata mulheres, roteiro viagem feminino, dicas viagem mulheres, como viajar sozinha, mulher viajante brasil, viagens SP mulheres, viagens RJ mulheres, viagens nordeste mulheres, melhores destinos mulheres 2025, comunidade viajantes femininas, apps segurança viagem, turismo solo feminino, aventura feminina, backpacking mulheres" />
     <meta name="author" content="Viajadoras" />
     <meta name="theme-color" content="#ec4899" />
     <meta name="color-scheme" content="light dark" />
@@ -91,6 +92,7 @@ import "../styles/global.css";
       description={pageDescription}
       url={canonicalUrl}
     />
+    {isHomepage && <FAQSchema />}
   </head>
   <body>
     <header class="sticky top-0 z-50 border-b border-gray-200/80 dark:border-white/10 bg-white/95 dark:bg-black/70 backdrop-blur shadow-sm supports-[backdrop-filter]:bg-white/90 dark:supports-[backdrop-filter]:bg-black/60">

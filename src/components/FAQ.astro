@@ -1,0 +1,107 @@
+---
+const faqs = [
+  {
+    question: "Como funciona o app Viajadoras para mulheres viajantes?",
+    answer: "O Viajadoras é um aplicativo que conecta mulheres que gostam de viajar, oferecendo recursos de segurança como check-ins com localização, contatos de confiança e pedidos de ajuda (SOS). Você pode encontrar companhia para suas viagens, formar grupos com base em destinos e datas, e fazer parte de uma rede de apoio de mulheres viajantes."
+  },
+  {
+    question: "O app é só para mulheres viajando sozinhas?",
+    answer: "Não! O Viajadoras é para TODAS as mulheres que viajam - sozinhas, acompanhadas, a trabalho ou lazer. Se você já tem companhia mas quer socializar no destino, viaja a negócios e busca networking, ou apenas quer ter segurança e rede de apoio, o app é para você!"
+  },
+  {
+    question: "Como encontrar hospedagem segura para mulheres?",
+    answer: "Na comunidade Viajadoras, você encontra recomendações de hotéis, pousadas e hostels avaliados por outras mulheres viajantes. Além disso, temos parceria com a ABIH que oferece até 15% de desconto em hospedagens para membros da comunidade. Você também pode encontrar companhia para dividir quarto e economizar."
+  },
+  {
+    question: "É seguro viajar sozinha sendo mulher?",
+    answer: "Viajar sozinha pode ser seguro quando você toma as precauções certas. O Viajadoras foi criado justamente para aumentar a segurança de mulheres viajantes através de check-ins regulares, contatos de confiança que podem acompanhar sua localização, e uma rede de apoio de outras mulheres viajantes que podem ajudar caso você precise."
+  },
+  {
+    question: "Como posso encontrar outras mulheres para viajar junto?",
+    answer: "No app Viajadoras, você pode buscar por destino e datas de viagem para encontrar outras mulheres com planos similares. O sistema faz match por interesses, estilo de viagem e perfil. Você pode participar de grupos de viagem, conversar via chat e organizar encontros antes de partir."
+  },
+  {
+    question: "Consigo usar para viagens a trabalho?",
+    answer: "Sim! Muitas mulheres usam o Viajadoras para viagens corporativas e a negócios. Você pode ter segurança através dos check-ins, fazer networking com outras profissionais no destino, e aproveitar o tempo livre conhecendo a cidade com outras viajadoras."
+  },
+  {
+    question: "Quais são os destinos mais populares para mulheres viajantes no Brasil?",
+    answer: "Os destinos mais buscados são São Paulo e Rio de Janeiro (que representam mais de 64% das viagens), seguidos por cidades do Nordeste como Salvador, Recife, Fortaleza, Porto Seguro e Maceió. Na comunidade, você encontra dicas e experiências reais sobre cada destino."
+  },
+  {
+    question: "Como funciona para encontrar hostel para mulheres?",
+    answer: "No app você pode buscar recomendações de hostels com dormitórios femininos, ambiente acolhedor e seguro. Também pode encontrar outras mochileiras para dividir quarto, compartilhar custos e fazer companhia durante a viagem."
+  },
+  {
+    question: "O que é o sistema de check-in do Viajadoras?",
+    answer: "O sistema de check-in permite que você envie sua localização periodicamente para seus contatos de confiança enquanto viaja. Assim, pessoas que você confia podem acompanhar sua jornada e saber que você está bem. Se você não fizer check-in no horário combinado, seus contatos são alertados automaticamente."
+  },
+  {
+    question: "Como funciona o SOS para emergências?",
+    answer: "O botão SOS permite que você peça ajuda rapidamente em situações de emergência. Ao acioná-lo, seus contatos de confiança e outras viajadoras próximas da sua localização são notificadas imediatamente, permitindo que você receba apoio quando mais precisar."
+  },
+  {
+    question: "Posso usar apenas para ter rede de apoio, sem buscar companhia?",
+    answer: "Com certeza! Muitas mulheres usam o Viajadoras apenas para ter a segurança dos check-ins, manter contatos de confiança informados e ter acesso ao suporte da comunidade caso precisem. Você escolhe como quer usar o app."
+  },
+  {
+    question: "Como socializar com outras mulheres durante a viagem?",
+    answer: "Além de encontrar companhia para viajar, você pode participar de eventos e encontros organizados no destino, juntar-se a grupos de interesse (foodie, aventura, cultura, etc.) e conhecer outras viajadoras através do chat e perfis."
+  },
+  {
+    question: "Preciso pagar para usar o Viajadoras?",
+    answer: "O Viajadoras está em fase de desenvolvimento e em breve estará disponível. Siga @viajadorasbr no Instagram para ser uma das primeiras a conhecer o app e faça parte da comunidade de mulheres viajantes mais segura do Brasil."
+  },
+  {
+    question: "Posso usar o app para viagens nacionais e internacionais?",
+    answer: "Sim! O Viajadoras funciona para qualquer tipo de viagem - seja nacional ou internacional, viagens curtas de fim de semana ou mochilões longos. Onde quer que você vá, pode encontrar companhia, compartilhar sua localização com contatos de confiança e ter o apoio da comunidade."
+  }
+];
+---
+
+<section id="faq" class="bg-white dark:bg-black py-16">
+  <div class="container">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl text-center mb-4">
+        Perguntas Frequentes sobre Viagens para Mulheres
+      </h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 mb-12">
+        Tudo o que você precisa saber sobre viajar com segurança e encontrar companhia
+      </p>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/5 p-6 [&_svg]:open:rotate-180">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-medium text-gray-900 dark:text-white list-none">
+              <span class="text-lg">{faq.question}</span>
+              <svg class="mt-1 h-5 w-5 flex-shrink-0 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-gradient-to-br from-brand-500 to-accent-600 p-8 text-center text-white">
+        <h3 class="text-2xl font-semibold mb-3">Ainda tem dúvidas?</h3>
+        <p class="mb-6 text-white/90">
+          Siga a gente no Instagram para saber mais sobre o app e a comunidade de mulheres viajantes
+        </p>
+        <a
+          href="https://instagram.com/viajadorasbr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-medium text-brand-600 transition hover:bg-gray-50"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.509-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"/>
+          </svg>
+          Seguir @viajadorasbr
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
