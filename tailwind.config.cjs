@@ -4,18 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: "#E6FFFB",
-          100: "#CCFBF1",
-          200: "#99F6E4",
-          300: "#5EEAD4",
-          400: "#2DD4BF",
-          500: "#14B8A6",
-          600: "#0F766E",
-          700: "#0D5F59",
-          800: "#0B4A45",
-          900: "#073B36",
-        },
+        primary: "#FF7F50",
+        secondary: "#FADBC5",
+        "background-light": "#FDF8F5",
+        "text-main": "#363636",
+        "text-light": "#737373",
         accent: {
           50: "#F5F3FF",
           100: "#EDE9FE",
@@ -33,7 +26,17 @@ module.exports = {
         warning: { 500: "#F59E0B", 600: "#D97706" },
         error: { 500: "#EF4444", 600: "#DC2626" },
       },
-      borderRadius: { xl: "1rem" },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
+      borderRadius: {
+        DEFAULT: "1.5rem",
+        lg: "1.75rem",
+        xl: "2rem",
+        "3xl": "1.5rem",
+        "4xl": "2rem",
+        full: "9999px",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
