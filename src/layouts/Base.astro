@@ -19,6 +19,8 @@ const ogAlt = 'Grupo de mulheres viajando e sorrindo na praia — Viajadoras';
 const canonicalUrl = Astro.url ? Astro.url.toString() : (Astro.site ? Astro.site.toString() : '');
 
 import "../styles/global.css";
+import "../styles/design-tokens.css";
+import "../styles/animations.css";
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -42,7 +44,7 @@ import "../styles/global.css";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <!-- Favicons -->
@@ -100,23 +102,61 @@ import "../styles/global.css";
     />
     {isHomepage && <FAQSchema />}
   </head>
-  <body class="bg-background-light text-text-main font-sans">
-    <header class="sticky top-0 z-50 w-full bg-background-light/80 backdrop-blur-sm">
+  <body class="bg-neutral-50 text-neutral-900 font-sans antialiased">
+    <header class="sticky top-0 z-50 w-full bg-[#FFFBF8]/95 backdrop-blur-sm border-b-2 border-[#FF7F50]/10 shadow-sm">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex h-20 items-center justify-between">
-          <a href="/" class="flex items-center gap-3">
-            <img src="/images/logo-128.webp" alt="Viajadoras" width="32" height="32" class="h-8 w-8" />
-            <h2 class="text-text-main text-2xl font-bold">Viajadoras</h2>
+        <div class="flex h-16 sm:h-18 lg:h-20 items-center justify-between">
+          <a href="/" class="flex items-center gap-2.5 sm:gap-3 group">
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-br from-[#FF7F50] to-[#FADBC5] rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <img src="/images/logo-128.webp" alt="Viajadoras" width="36" height="36" class="h-8 w-8 sm:h-9 sm:w-9 relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
+            </div>
+            <div class="flex flex-col">
+              <h2 class="font-display text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight">Viajadoras</h2>
+              <span class="hidden sm:block text-[10px] uppercase tracking-[0.15em] text-[#FF7F50] font-medium -mt-0.5">Vai Segura!</span>
+            </div>
           </a>
-          <nav class="hidden items-center gap-8 md:flex">
-            <a class="text-text-main/80 text-base font-medium hover:text-primary transition-colors" href="#como-funciona">Como Funciona</a>
-            <a class="text-text-main/80 text-base font-medium hover:text-primary transition-colors" href="#manifesto">Nosso Manifesto</a>
-            <a class="text-text-main/80 text-base font-medium hover:text-primary transition-colors" href="#conectar">Conectar</a>
+          <nav class="hidden lg:flex items-center gap-1">
+            <a class="relative px-4 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors group" href="#como-funciona">
+              Como Funciona
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FF7F50] to-[#FADBC5] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="relative px-4 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors group" href="#para-quem">
+              Para Quem
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FF7F50] to-[#FADBC5] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="relative px-4 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors group" href="#destinos">
+              Destinos
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FF7F50] to-[#FADBC5] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="relative px-4 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors group" href="#faq">
+              FAQ
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FF7F50] to-[#FADBC5] group-hover:w-full transition-all duration-300"></span>
+            </a>
           </nav>
-          <div class="flex items-center gap-4">
-            <button class="md:hidden text-text-main" aria-label="Menu">
-              <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <a
+              href="https://instagram.com/viajadorasbr"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-[#FF7F50] rounded-full hover:bg-[#FF6B40] transition-all duration-300 hover:shadow-lg hover:shadow-[#FF7F50]/25 hover:-translate-y-0.5"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span class="hidden xl:inline">Instagram</span>
+            </a>
+            <a
+              href="https://instagram.com/viajadorasbr"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="lg:hidden p-2 text-primary hover:bg-primary/10 rounded-full transition-colors"
+              aria-label="Instagram"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -124,36 +164,41 @@ import "../styles/global.css";
     <main>
       <slot />
     </main>
-    <footer class="bg-text-main text-background-light py-12">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="relative bg-neutral-900 text-neutral-100 py-16 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div>
             <h3 class="text-lg font-bold text-white">Viajadoras</h3>
-            <p class="mt-2 text-sm text-white/70">Sua Rede de Segurança e Conexão.</p>
+            <p class="mt-2 text-sm text-neutral-400">Sua Rede de Segurança e Conexão.</p>
           </div>
           <div>
-            <h3 class="font-bold uppercase tracking-wider text-white">Explore</h3>
+            <h3 class="font-semibold uppercase tracking-wider text-white text-sm">Explore</h3>
             <nav class="mt-4 flex flex-col gap-2">
-              <a class="text-white/70 hover:text-primary" href="#como-funciona">Como Funciona</a>
-              <a class="text-white/70 hover:text-primary" href="#manifesto">Nosso Manifesto</a>
-              <a class="text-white/70 hover:text-primary" href="#conectar">Conectar</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm" href="#como-funciona">Como Funciona</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm" href="#para-quem">Para Quem</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm" href="#destinos">Destinos</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm" href="#faq">FAQ</a>
             </nav>
           </div>
           <div>
-            <h3 class="font-bold uppercase tracking-wider text-white">Legal</h3>
+            <h3 class="font-semibold uppercase tracking-wider text-white text-sm">Legal</h3>
             <nav class="mt-4 flex flex-col gap-2">
-              <a class="text-white/70 hover:text-primary" href="/termos">Termos de Uso</a>
-              <a class="text-white/70 hover:text-primary" href="/privacidade">Privacidade</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm" href="/termos">Termos de Uso</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm" href="/privacidade">Privacidade</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm" href="/dados-seguranca">Dados e Segurança</a>
             </nav>
           </div>
           <div>
-            <h3 class="font-bold uppercase tracking-wider text-white">Conecte-se</h3>
+            <h3 class="font-semibold uppercase tracking-wider text-white text-sm">Conecte-se</h3>
             <div class="mt-4 flex gap-4">
-              <a class="text-white/70 hover:text-primary" href="https://instagram.com/viajadorasbr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+              <a class="text-neutral-400 hover:text-primary transition-colors text-sm inline-flex items-center gap-2" href="https://instagram.com/viajadorasbr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </div>
-        <div class="mt-8 border-t border-white/20 pt-8 text-center text-sm text-white/50">
+        <div class="mt-12 border-t border-neutral-800 pt-8 text-center text-sm text-neutral-500">
           <p>© {new Date().getFullYear()} Viajadoras. Todos os direitos reservados.</p>
           <p class="mt-2">GT TECNOLOGIA E SERVICOS LTDA · CNPJ 46.112.388/0001-13</p>
         </div>

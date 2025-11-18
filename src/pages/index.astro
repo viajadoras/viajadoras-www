@@ -2,20 +2,26 @@
 import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import FeatureCard from "../components/FeatureCard.astro";
+import Gallery from "../components/Gallery.astro";
+import ForWhom from "../components/ForWhom.astro";
+import Destinations from "../components/Destinations.astro";
+import Testimonials from "../components/Testimonials.astro";
 import ManifestoSection from "../components/ManifestoSection.astro";
 import CTASection from "../components/CTASection.astro";
 
 const title = 'Viajadoras - Segurança e Conexão para Mulheres';
-const description = 'Viajadoras é o movimento que redefine a experiência de viajar para mulheres. Segurança ativa, conexões reais e a autonomia para explorar o mundo, do seu jeito.';
+const description = 'Conexões reais, segurança verdadeira e liberdade total. Para qualquer mulher que viaja, do jeito que você quiser.';
 ---
 <Base {title} {description} lang="pt-BR">
   <Hero />
 
-  <section id="como-funciona" class="py-20 sm:py-28 bg-background-light">
+  <section id="como-funciona" class="py-24 lg:py-32 bg-secondary-100">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
       <div class="mx-auto max-w-4xl text-center mb-16 sm:mb-20">
-        <h2 class="text-4xl font-bold text-text-main sm:text-5xl lg:text-5xl leading-tight">Como Viajadoras Empodera Você</h2>
-        <p class="mt-6 text-lg text-text-light sm:text-xl leading-relaxed">
+        <h2 class="text-4xl font-bold text-neutral-900 sm:text-5xl lg:text-5xl leading-tight">
+          Como Viajadoras <span class="text-primary">Empodera Você</span>
+        </h2>
+        <p class="mt-6 text-lg text-neutral-600 sm:text-xl leading-relaxed">
           Não é "só" um app de segurança. É a sua plataforma completa para viajar com confiança, comunidade e autenticidade.
         </p>
       </div>
@@ -28,9 +34,9 @@ const description = 'Viajadoras é o movimento que redefine a experiência de vi
         />
         <FeatureCard
           title="Conexão Autêntica"
-          description="Encontre companheiras, faça amigas ou receba acolhimento de locais. Nunca mais viaje sozinha, a menos que queira."
+          description="Encontre companheiras, faça amigas ou receba acolhimento de locais. Do jeito que você quiser."
           icon="diversity_2"
-          iconBgColor="bg-[#8B5CF6]"
+          iconBgColor="bg-secondary"
         />
         <FeatureCard
           title="Descoberta de Experiências"
@@ -41,6 +47,14 @@ const description = 'Viajadoras é o movimento que redefine a experiência de vi
       </div>
     </div>
   </section>
+
+  <Gallery />
+
+  <ForWhom />
+
+  <Destinations />
+
+  <Testimonials />
 
   <ManifestoSection />
 
