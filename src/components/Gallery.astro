@@ -1,8 +1,16 @@
 ---
+import { Image } from 'astro:assets';
+import gallery1 from '../assets/images/gallery/gallery-1.png';
+import gallery2 from '../assets/images/gallery/gallery-2.png';
+import gallery3 from '../assets/images/gallery/gallery-3.png';
+import gallery4 from '../assets/images/gallery/gallery-4.png';
+import gallery5 from '../assets/images/gallery/gallery-5.png';
+import gallery6 from '../assets/images/gallery/gallery-6.png';
+
 const galleryItems = [
   {
     id: 1,
-    image: "/images/gallery/gallery-1.png",
+    image: gallery1,
     alt: "Mulheres viajando juntas em Lisboa",
     testimonial: "Viajar é trocar a roupa da alma.",
     author: "Mario Quintana",
@@ -10,7 +18,7 @@ const galleryItems = [
   },
   {
     id: 2,
-    image: "/images/gallery/gallery-2.png",
+    image: gallery2,
     alt: "Segurança em viagens femininas",
     testimonial: "A vida é o que fazemos dela. As viagens são os viajantes.",
     author: "Fernando Pessoa",
@@ -18,7 +26,7 @@ const galleryItems = [
   },
   {
     id: 3,
-    image: "/images/gallery/gallery-3.png",
+    image: gallery3,
     alt: "Networking entre mulheres viajantes",
     testimonial: "Liberdade é pouco. O que eu desejo ainda não tem nome.",
     author: "Clarice Lispector",
@@ -26,7 +34,7 @@ const galleryItems = [
   },
   {
     id: 4,
-    image: "/images/gallery/gallery-4.png",
+    image: gallery4,
     alt: "Primeira viagem solo feminina",
     testimonial: "Não se nasce mulher, torna-se mulher.",
     author: "Simone de Beauvoir",
@@ -34,7 +42,7 @@ const galleryItems = [
   },
   {
     id: 5,
-    image: "/images/gallery/gallery-5.png",
+    image: gallery5,
     alt: "Experiências autênticas em viagens",
     testimonial: "Pés, para que os quero, se tenho asas para voar?",
     author: "Frida Kahlo",
@@ -42,7 +50,7 @@ const galleryItems = [
   },
   {
     id: 6,
-    image: "/images/gallery/gallery-6.png",
+    image: gallery6,
     alt: "Empoderamento feminino através de viagens",
     testimonial: "Coragem é a resistência ao medo, domínio do medo, e não a ausência do medo.",
     author: "Mark Twain",
@@ -101,10 +109,10 @@ const galleryItems = [
             <!-- Glass Card Container -->
             <div class="absolute inset-0 glass-card border-2 border-transparent bg-clip-border transition-all duration-500 group-hover:border-gradient-to-br group-hover:from-primary/40 group-hover:via-secondary/40 group-hover:to-primary/40 backdrop-blur-sm">
               <!-- Image -->
-              <img
+              <Image
                 src={item.image}
                 alt={item.alt}
-                loading="lazy"
+                width={600}
                 class="h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
               />
 

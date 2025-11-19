@@ -3,8 +3,8 @@ import StructuredData from "../components/StructuredData.astro";
 import FAQSchema from "../components/FAQSchema.astro";
 
 const props = Astro.props as Record<string, string>;
-const pageTitle = props.title ?? 'Viajadoras - Vai Segura';
-const pageDescription = props.description ?? 'Companhia e segurança entre mulheres: conexões por viagem, check-ins e contatos de confiança.';
+const pageTitle = props.title ?? 'Viajadoras - Viagens para Mulheres e Comunidade Segura';
+const pageDescription = props.description ?? 'Sua comunidade de viagens para mulheres. Encontre companhia, faça check-ins de segurança e conecte-se com mulheres viajantes em todo o Brasil.';
 const lang = 'pt-BR';
 const isHomepage = Astro.url.pathname === '/';
 
@@ -32,7 +32,7 @@ import "../styles/animations.css";
     <title>{pageTitle}</title>
     <meta name="title" content={pageTitle} />
     <meta name="description" content={pageDescription} />
-    <meta name="keywords" content="viagens para mulheres, mulheres viajando sozinhas, mulheres viajantes, passagens para mulheres, hotéis para mulheres, hospedagem feminina, hostels mulheres, pousadas seguras mulheres, destinos para mulheres, onde se hospedar mulher sozinha, viagem solo feminina, segurança feminina viagem, app para mulheres viajantes, grupo de mulheres viajantes, rede de mulheres viajantes, viajadoras brasil, comunidade mulheres viajantes, viagem segura mulheres, companhia de viagem feminina, aplicativo viagem mulheres, mochileiras brasil, mulheres que viajam sozinhas, turismo feminino, viagem em grupo mulheres, amigas de viagem, conectar mulheres viajantes, socialização viagem mulheres, mulheres viajando acompanhadas, viagem trabalho mulheres, viagem negócios feminina, rede apoio viajantes, check-in viagem, contatos confiança, SOS viagem mulheres, segurança viagem feminina, encontrar companhia viagem, mulheres viajando juntas, viajar com segurança, hospedagem confiável mulheres, hotel seguro mulher, desconto hospedagem mulheres, viagem barata mulheres, roteiro viagem feminino, dicas viagem mulheres, como viajar sozinha, mulher viajante brasil, viagens SP mulheres, viagens RJ mulheres, viagens nordeste mulheres, melhores destinos mulheres 2025, comunidade viajantes femininas, apps segurança viagem, turismo solo feminino, aventura feminina, backpacking mulheres" />
+    <meta name="keywords" content="viagens para mulheres, viajar sozinha, comunidade mulheres viajantes, segurança feminina viagem, encontrar companhia viagem, app viagens mulheres, mulheres que viajam, turismo feminino, viajadoras brasil, rede de apoio feminina" />
     <meta name="author" content="Viajadoras" />
     <meta name="theme-color" content="#FF7F50" />
     <meta name="color-scheme" content="light dark" />
@@ -80,7 +80,7 @@ import "../styles/animations.css";
     <meta name="twitter:image:alt" content={ogAlt} />
     <meta name="twitter:site" content="@viajadorasbr" />
     <meta name="twitter:url" content={canonicalUrl} />
-    
+
     <!-- Google tag (gtag.js) - Google Ads -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=AW-17592059630"></script>
     <script defer>
@@ -205,5 +205,5 @@ import "../styles/animations.css";
       </div>
     </footer>
   </body>
-  
+
 </html>
