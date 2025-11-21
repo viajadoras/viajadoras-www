@@ -2,43 +2,51 @@
 const testimonials = [
   {
     id: 1,
-    quote: "Fiz minha primeira viagem solo para Lisboa com toda confiança!",
-    name: "Ana",
-    age: 28,
+    quote: "Quero fazer minha primeira viagem solo e descobrir quem eu sou quando estou sozinha",
+    name: "Julia",
+    age: 19,
     location: "São Paulo",
     gradient: "from-primary to-primary-400"
   },
   {
     id: 2,
-    quote: "Conheci 5 executivas incríveis em Buenos Aires. Networking que virou amizade!",
-    name: "Carla",
-    age: 42,
+    quote: "Busco equilibrar minha carreira com aventuras que me façam sentir viva e conectada",
+    name: "Marina",
+    age: 28,
     location: "Rio",
     gradient: "from-secondary-400 to-secondary"
   },
   {
     id: 3,
-    quote: "Como anfitriã, recebi 12 viajadoras e fiz amigas de todo Brasil!",
-    name: "Paula",
+    quote: "Quero conhecer mulheres inspiradoras que entendem que networking pode ser divertido",
+    name: "Carla",
     age: 35,
-    location: "Salvador",
+    location: "Curitiba",
     gradient: "from-primary-400 to-secondary-400"
   },
   {
     id: 4,
-    quote: "A segurança dos check-ins me deu toda liberdade que precisava",
-    name: "Julia",
-    age: 25,
-    location: "Curitiba",
+    quote: "Preciso de tempo para mim, longe da rotina, mas com a segurança de não estar só",
+    name: "Paula",
+    age: 42,
+    location: "Salvador",
     gradient: "from-secondary to-primary"
   },
   {
     id: 5,
-    quote: "Melhor decisão que tomei! Viagem com amigas + conhecer gente nova = perfeito",
-    name: "Marina",
-    age: 31,
+    quote: "Sonho em realizar as viagens que adiei por anos, agora com toda liberdade",
+    name: "Beatriz",
+    age: 56,
     location: "BH",
     gradient: "from-primary to-secondary"
+  },
+  {
+    id: 6,
+    quote: "Quero compartilhar minha experiência de vida com mulheres de todas as idades",
+    name: "Helena",
+    age: 63,
+    location: "Brasília",
+    gradient: "from-primary-400 to-primary"
   }
 ];
 
@@ -50,15 +58,15 @@ const duplicatedTestimonials = [...testimonials, ...testimonials];
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
     <div class="text-center max-w-3xl mx-auto">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-neutral-200 shadow-sm mb-6">
-        <span class="text-sm font-semibold text-neutral-600 tracking-wide uppercase">Depoimentos</span>
+        <span class="text-sm font-semibold text-neutral-600 tracking-wide uppercase">Vozes</span>
       </div>
-      
+
       <h2 class="font-display text-4xl sm:text-5xl font-bold text-neutral-900 mb-6">
-        Histórias Reais de
-        <span class="text-primary">Viajadoras</span>
+        O que elas
+        <span class="text-primary">desejam</span>
       </h2>
       <p class="text-lg sm:text-xl text-neutral-600 font-light leading-relaxed">
-        Descubra como a rede transformou a forma de viajar de centenas de mulheres
+        Liberdade, segurança e conexões reais. Esses são os sonhos das mulheres que viajam.
       </p>
     </div>
   </div>
@@ -69,10 +77,10 @@ const duplicatedTestimonials = [...testimonials, ...testimonials];
     <div class="absolute right-0 top-0 bottom-0 w-32 sm:w-64 bg-gradient-to-l from-neutral-50 via-neutral-50/90 to-transparent z-10 pointer-events-none"></div>
 
     <!-- Slider container -->
-    <div class="testimonials-slider-container overflow-hidden py-10">
+    <div class="testimonials-slider-container overflow-x-auto overflow-y-hidden py-10 cursor-grab active:cursor-grabbing" data-slider-container>
       <div class="testimonials-track flex gap-8 px-8" data-testimonials-track>
         {duplicatedTestimonials.map((testimonial) => (
-          <div class="testimonial-card flex-shrink-0 w-[380px] sm:w-[450px]" key={`${testimonial.id}-${Math.random()}`}>
+          <div class="testimonial-card flex-shrink-0 w-[380px] sm:w-[450px] select-none" key={`${testimonial.id}-${Math.random()}`}>
             <div class="group h-full p-8 rounded-[2rem] bg-white border border-neutral-100 shadow-soft hover:shadow-soft-lg transition-all duration-500 hover:-translate-y-2">
               <!-- Header -->
               <div class="flex items-center gap-4 mb-8">
@@ -95,22 +103,9 @@ const duplicatedTestimonials = [...testimonials, ...testimonials];
               </div>
 
               <!-- Quote -->
-              <p class="text-neutral-700 text-xl leading-relaxed font-light italic mb-8">
+              <p class="text-neutral-700 text-xl leading-relaxed font-light italic">
                 "{testimonial.quote}"
               </p>
-
-              <!-- Rating -->
-              <div class="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    class="w-5 h-5 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                ))}
-              </div>
             </div>
           </div>
         ))}
@@ -122,15 +117,31 @@ const duplicatedTestimonials = [...testimonials, ...testimonials];
 <style>
   .testimonials-slider-container {
     position: relative;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .testimonials-slider-container::-webkit-scrollbar {
+    display: none;
   }
 
   .testimonials-track {
     display: flex;
-    animation: scroll-horizontal 40s linear infinite;
+    animation: scroll-horizontal 50s linear infinite;
     will-change: transform;
   }
 
   .testimonials-track:hover {
+    animation-play-state: paused;
+  }
+
+  .testimonials-track.dragging {
+    animation-play-state: paused;
+    scroll-behavior: auto;
+  }
+
+  .testimonials-track.manual-scroll {
     animation-play-state: paused;
   }
 
@@ -193,28 +204,82 @@ const duplicatedTestimonials = [...testimonials, ...testimonials];
 </style>
 
 <script>
-  // Adiciona interação de pause ao hover para melhor UX
-  document.addEventListener('DOMContentLoaded', () => {
+  function initTestimonialsSlider() {
+    const container = document.querySelector('[data-slider-container]') as HTMLElement;
     const track = document.querySelector('[data-testimonials-track]') as HTMLElement;
 
-    if (track) {
-      // Duplicar mais uma vez se necessário para garantir loop perfeito
-      const cards = track.querySelectorAll('.testimonial-card');
-      const trackWidth = track.scrollWidth;
+    if (!container || !track) return;
 
-      // Log para debug (remover em produção)
-      console.log(`Testimonials slider initialized with ${cards.length} cards`);
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let autoScrollTimeout: number;
 
-      // Pause individual cards on hover
-      cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          track.style.animationPlayState = 'paused';
-        });
+    const pauseAutoScroll = () => {
+      track.classList.add('manual-scroll');
+      clearTimeout(autoScrollTimeout);
 
-        card.addEventListener('mouseleave', () => {
-          track.style.animationPlayState = 'running';
-        });
+      autoScrollTimeout = window.setTimeout(() => {
+        track.classList.remove('manual-scroll');
+      }, 3000);
+    };
+
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      track.classList.add('dragging');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+      container.style.cursor = 'grabbing';
+      pauseAutoScroll();
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDragging = false;
+      track.classList.remove('dragging');
+      container.style.cursor = 'grab';
+    });
+
+    container.addEventListener('mouseup', () => {
+      isDragging = false;
+      track.classList.remove('dragging');
+      container.style.cursor = 'grab';
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 2;
+      container.scrollLeft = scrollLeft - walk;
+    });
+
+    container.addEventListener('scroll', () => {
+      pauseAutoScroll();
+    });
+
+    container.addEventListener('touchstart', () => {
+      pauseAutoScroll();
+    });
+
+    const cards = track.querySelectorAll('.testimonial-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
       });
-    }
-  });
+
+      card.addEventListener('mouseleave', () => {
+        if (!track.classList.contains('manual-scroll') && !isDragging) {
+          track.style.animationPlayState = 'running';
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTestimonialsSlider);
+  } else {
+    initTestimonialsSlider();
+  }
+
+  document.addEventListener('astro:page-load', initTestimonialsSlider);
 </script>
