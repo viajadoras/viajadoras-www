@@ -77,7 +77,7 @@ const duplicatedTestimonials = [...testimonials, ...testimonials];
     <div class="absolute right-0 top-0 bottom-0 w-32 sm:w-64 bg-gradient-to-l from-neutral-50 via-neutral-50/90 to-transparent z-10 pointer-events-none"></div>
 
     <!-- Slider container -->
-    <div class="testimonials-slider-container overflow-x-auto overflow-y-hidden py-10 cursor-grab active:cursor-grabbing" data-slider-container>
+    <div class="testimonials-slider-container overflow-x-auto overflow-y-hidden py-10 cursor-grab active:cursor-grabbing scroll-reveal" data-slider-container>
       <div class="testimonials-track flex gap-8 px-8" data-testimonials-track>
         {duplicatedTestimonials.map((testimonial) => (
           <div class="testimonial-card flex-shrink-0 w-[380px] sm:w-[450px] select-none" key={`${testimonial.id}-${Math.random()}`}>

@@ -45,17 +45,17 @@ module.exports = {
         success: {
           DEFAULT: "#16A34A",
           500: "#22C55E",
-          600: "#16A34A"
+          600: "#16A34A",
         },
         warning: {
           DEFAULT: "#D97706",
           500: "#F59E0B",
-          600: "#D97706"
+          600: "#D97706",
         },
         error: {
           DEFAULT: "#DC2626",
           500: "#EF4444",
-          600: "#DC2626"
+          600: "#DC2626",
         },
         coral: {
           50: "#FFF5F0",
@@ -116,9 +116,12 @@ module.exports = {
         body: ["Outfit", "system-ui", "sans-serif"],
       },
       fontSize: {
-        'display-lg': ['5.5rem', { lineHeight: '1', letterSpacing: '-0.02em' }],
-        'display': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        'display-sm': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
+        "display-lg": ["5.5rem", { lineHeight: "1", letterSpacing: "-0.02em" }],
+        display: ["4.5rem", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
+        "display-sm": [
+          "3.5rem",
+          { lineHeight: "1.1", letterSpacing: "-0.01em" },
+        ],
       },
       borderRadius: {
         DEFAULT: "1.25rem",
@@ -129,57 +132,58 @@ module.exports = {
         full: "9999px",
       },
       boxShadow: {
-        'soft': '0 20px 60px -15px rgba(255, 127, 80, 0.15)',
-        'soft-lg': '0 30px 80px -20px rgba(255, 127, 80, 0.2)',
-        'glow': '0 0 60px -10px rgba(139, 92, 246, 0.4)',
-        'primary': '0 20px 60px -15px rgba(255, 127, 80, 0.25)',
-        'secondary': '0 20px 60px -15px rgba(250, 219, 197, 0.25)',
+        soft: "0 20px 60px -15px rgba(255, 127, 80, 0.15)",
+        "soft-lg": "0 30px 80px -20px rgba(255, 127, 80, 0.2)",
+        glow: "0 0 60px -10px rgba(139, 92, 246, 0.4)",
+        primary: "0 20px 60px -15px rgba(255, 127, 80, 0.25)",
+        secondary: "0 20px 60px -15px rgba(250, 219, 197, 0.25)",
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'slide-in': 'slideIn 0.6s ease-out',
-        'scale-in': 'scaleIn 0.5s ease-out',
-        'shimmer': 'shimmer 2s infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'gradient': 'gradient 8s ease infinite',
+        "fade-in": "fadeIn 0.6s ease-out",
+        "slide-up": "slideUp 0.6s ease-out",
+        "slide-in": "slideIn 0.6s ease-out",
+        "scale-in": "scaleIn 0.5s ease-out",
+        shimmer: "shimmer 2s infinite",
+        float: "float 6s ease-in-out infinite",
+        gradient: "gradient 8s ease infinite",
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         slideIn: {
-          '0%': { opacity: '0', transform: 'translateX(-30px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
+          "0%": { opacity: "0", transform: "translateX(-30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
         },
         scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
         },
         shimmer: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
         },
         gradient: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-mesh': 'radial-gradient(at 27% 37%, hsla(15, 100%, 65%, 0.15) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(270, 80%, 70%, 0.15) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(15, 100%, 70%, 0.15) 0px, transparent 50%), radial-gradient(at 10% 29%, hsla(15, 95%, 75%, 0.15) 0px, transparent 50%), radial-gradient(at 97% 96%, hsla(15, 100%, 65%, 0.15) 0px, transparent 50%), radial-gradient(at 33% 50%, hsla(270, 80%, 75%, 0.15) 0px, transparent 50%), radial-gradient(at 79% 53%, hsla(15, 100%, 68%, 0.15) 0px, transparent 50%)',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-mesh":
+          "radial-gradient(at 27% 37%, hsla(15, 100%, 65%, 0.15) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(270, 80%, 70%, 0.15) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(15, 100%, 70%, 0.15) 0px, transparent 50%), radial-gradient(at 10% 29%, hsla(15, 95%, 75%, 0.15) 0px, transparent 50%), radial-gradient(at 97% 96%, hsla(15, 100%, 65%, 0.15) 0px, transparent 50%), radial-gradient(at 33% 50%, hsla(270, 80%, 75%, 0.15) 0px, transparent 50%), radial-gradient(at 79% 53%, hsla(15, 100%, 68%, 0.15) 0px, transparent 50%)",
       },
       backdropBlur: {
-        xs: '2px',
+        xs: "2px",
       },
     },
   },

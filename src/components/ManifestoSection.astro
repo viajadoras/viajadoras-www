@@ -1,15 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import friends1Img from '../assets/images/friends1.png';
-import friends2Img from '../assets/images/friends2.png';
-import friends3Img from '../assets/images/friends3.png';
-import feature1Img from '../assets/images/feature1.jpg';
+import manifestoFriendsImg from '../assets/images/manifesto-friends.png';
 ---
 
 <section id="manifesto" class="py-24 lg:py-32 bg-secondary/10">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
-    <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24 xl:gap-32 max-w-[1400px] mx-auto">
-      <div class="text-center lg:text-left">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-24 max-w-[1500px] mx-auto">
+      <div class="text-center lg:text-left order-2 lg:order-1">
         <h2 class="font-display text-4xl font-bold text-neutral-900 sm:text-5xl lg:text-5xl leading-tight">Por que Viajadoras existe</h2>
 
         <p class="mt-8 text-lg text-neutral-700 leading-relaxed font-medium">
@@ -45,34 +42,15 @@ import feature1Img from '../assets/images/feature1.jpg';
 
         <p class="mt-6 font-bold text-primary text-lg">— Equipe Viajadoras</p>
       </div>
-      <div class="grid grid-cols-2 gap-4 lg:gap-5">
-        <div class="relative aspect-square">
+
+      <div class="relative order-1 lg:order-2">
+        <div class="relative aspect-[4/3] lg:aspect-[5/4] w-full">
           <Image
-            src={friends1Img}
-            alt="Grupo de mulheres amigas viajando juntas e sorrindo"
-            class="h-full w-full rounded-3xl object-cover shadow-xl transition-transform duration-300 hover:scale-105"
+            src={manifestoFriendsImg}
+            alt="Grupo de amigas brasileiras rindo e compartilhando um momento feliz"
+            class="h-full w-full rounded-3xl object-cover shadow-2xl"
           />
-        </div>
-        <div class="relative aspect-square translate-y-8 lg:translate-y-10">
-          <Image
-            src={friends2Img}
-            alt="Mulheres fazendo trilha e explorando a natureza"
-            class="h-full w-full rounded-3xl object-cover shadow-xl transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-        <div class="relative aspect-square -translate-y-8 lg:-translate-y-10">
-          <Image
-            src={friends3Img}
-            alt="Comunidade de viajantes compartilhando momentos"
-            class="h-full w-full rounded-3xl object-cover shadow-xl transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-        <div class="relative aspect-square">
-          <Image
-            src={feature1Img}
-            alt="Mulher viajando sozinha com segurança e liberdade"
-            class="h-full w-full rounded-3xl object-cover shadow-xl transition-transform duration-300 hover:scale-105"
-          />
+          <div class="absolute -inset-4 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-[2rem] -z-10 blur-2xl opacity-60"></div>
         </div>
       </div>
     </div>
