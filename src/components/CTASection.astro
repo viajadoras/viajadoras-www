@@ -1,5 +1,4 @@
 ---
-import Button from './ui/Button.astro';
 ---
 <section id="conectar" class="py-16 lg:py-20 bg-white">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
@@ -27,7 +26,7 @@ import Button from './ui/Button.astro';
           Junte-se ao movimento Viajadoras. A liberdade e a segurança que você merece estão a um passo.
         </p>
 
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div class="mt-8 flex flex-row items-center justify-center gap-3 sm:gap-6">
           <a
             href="https://play.google.com/store/apps/details?id=com.viajadoras.app&pcampaignid=web_share"
             target="_blank"
@@ -35,18 +34,24 @@ import Button from './ui/Button.astro';
             class="inline-block transition-transform duration-300 hover:scale-105 hover:-translate-y-1"
           >
             <img
-              src="/images/google-play-badge.webp"
+              src="/images/google-play-badge.svg"
               alt="Disponível no Google Play"
-              class="h-16 sm:h-20 w-auto"
+              class="w-36 sm:w-44 lg:w-auto lg:h-20 h-auto"
             />
           </a>
 
-          <Button
-            href="#manifesto"
-            variant="outline-white"
+          <a
+            href="https://apps.apple.com/br/app/viajadoras/id6755790482"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block transition-transform duration-300 hover:scale-105 hover:-translate-y-1"
           >
-            Conheça Nossa História
-          </Button>
+            <img
+              src="/images/app-store-badge.svg"
+              alt="Baixar na App Store"
+              class="w-36 sm:w-44 lg:w-auto lg:h-20 h-auto"
+            />
+          </a>
         </div>
       </div>
     </div>
